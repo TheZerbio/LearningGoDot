@@ -1,0 +1,71 @@
+[gd_scene load_steps=11 format=3 uid="uid://dxwqp1enl6u5v"]
+
+[ext_resource type="Texture2D" uid="uid://dg00xpxk00yt2" path="res://assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier.png" id="1_112k3"]
+[ext_resource type="Script" path="res://scenes/caracter.gd" id="1_b4lf5"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h22q7"]
+radius = 5.0
+height = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ebl4s"]
+atlas = ExtResource("1_112k3")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l4fuw"]
+atlas = ExtResource("1_112k3")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0pykq"]
+atlas = ExtResource("1_112k3")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8gfy"]
+atlas = ExtResource("1_112k3")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0kuk1"]
+atlas = ExtResource("1_112k3")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_masdo"]
+atlas = ExtResource("1_112k3")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76a77"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ebl4s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l4fuw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0pykq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8gfy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0kuk1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_masdo")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[node name="CharacterBody2D" type="CharacterBody2D"]
+script = ExtResource("1_b4lf5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -8)
+shape = SubResource("CapsuleShape2D_h22q7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -7)
+sprite_frames = SubResource("SpriteFrames_76a77")
+autoplay = "default"
+frame_progress = 0.714418
