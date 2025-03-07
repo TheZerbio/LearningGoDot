@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=4 uid="uid://cai0pkmwsacvv"]
+[gd_scene load_steps=8 format=4 uid="uid://cai0pkmwsacvv"]
 
 [ext_resource type="Texture2D" uid="uid://brlbm5p4sqf8c" path="res://assets/Tiny Swords (Update 010)/Terrain/Ground/Tilemap_Elevation.png" id="1_6bknp"]
 [ext_resource type="PackedScene" uid="uid://dxwqp1enl6u5v" path="res://scenes/Caracter.tscn" id="2_45723"]
+[ext_resource type="Texture2D" uid="uid://bcn5tifh8a6v1" path="res://assets/definitly_self_made/AI_generated_background.png" id="3_6aixw"]
 [ext_resource type="PackedScene" uid="uid://cgf1nlubwa47r" path="res://scenes/Background_cc.tscn" id="3_wtgjv"]
 [ext_resource type="PackedScene" uid="uid://dq7g7x4wj0kku" path="res://scenes/Potion_Health.tscn" id="4_bth6r"]
 
@@ -63,6 +64,13 @@ scale = Vector2(4, 4)
 metadata/currentHealth = 1.0
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(0, -50)
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D/Camera2D"]
+z_index = -1
+position = Vector2(0, -2.75)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_6aixw")
 
 [node name="Background" type="Node" parent="."]
 
