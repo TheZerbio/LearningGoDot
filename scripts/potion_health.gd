@@ -2,10 +2,14 @@ extends Node2D
 
 @export var heal_amount:float = 50
 @onready var collectible = $Collectible
+var full_scale_heal = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	var new_scale= Vector2(heal_amount/full_scale_heal,heal_amount/full_scale_heal)
+	if get_meta("debug"):
+		print_debug("Poition scale: " + str(scale)) # Automaticly scales Potion relativly to healing amount	
+	apply_scale(new_scale)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

@@ -10,6 +10,7 @@ radius = 286.923
 [node name="PotionHealth" type="Node2D"]
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_4jtma")
+metadata/debug = false
 
 [node name="Collectible" parent="." instance=ExtResource("1_i4wqy")]
 

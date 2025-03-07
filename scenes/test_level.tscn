@@ -74,12 +74,10 @@ scale = Vector2(2, 2)
 
 [node name="PotionHealth" parent="Node" instance=ExtResource("4_bth6r")]
 position = Vector2(728, -33)
-scale = Vector2(0.05, 0.05)
 heal_amount = 10.0
 
 [node name="PotionHealth2" parent="Node" instance=ExtResource("4_bth6r")]
 position = Vector2(637, -34)
-scale = Vector2(0.075, 0.075)
 heal_amount = 25.0
 
 [node name="PotionHealth3" parent="Node" instance=ExtResource("4_bth6r")]

@@ -15,6 +15,7 @@ func _process(delta):
 
 
 func on_player_entered(body):
-	print("Player interacted with Collectiable")
+	if get_meta("debug"):	
+		print("Player interacted with Collectiable")
 	collected.emit(body)
 	get_parent().queue_free() #Deletes itself and the Parent in the next frame
