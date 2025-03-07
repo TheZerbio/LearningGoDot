@@ -1,11 +1,29 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxwqp1enl6u5v"]
+[gd_scene load_steps=25 format=3 uid="uid://dxwqp1enl6u5v"]
 
 [ext_resource type="Texture2D" uid="uid://dg00xpxk00yt2" path="res://assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier.png" id="1_112k3"]
-[ext_resource type="Script" path="res://scenes/caracter.gd" id="1_b4lf5"]
+[ext_resource type="Script" path="res://scripts/caracter.gd" id="1_b4lf5"]
+[ext_resource type="Texture2D" uid="uid://c61qfjjvbxa1u" path="res://assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Death.png" id="2_oohfs"]
+[ext_resource type="Texture2D" uid="uid://cqauhsdea8bce" path="res://assets/Tiny RPG Character Asset Pack v1.03 -Free Soldier&Orc/Characters(100x100)/Soldier/Soldier/Soldier-Walk.png" id="4_vmmvy"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h22q7"]
 radius = 5.0
 height = 16.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vtomc"]
+atlas = ExtResource("2_oohfs")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pqgq1"]
+atlas = ExtResource("2_oohfs")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jdfp3"]
+atlas = ExtResource("2_oohfs")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vfcqq"]
+atlas = ExtResource("2_oohfs")
+region = Rect2(300, 0, 100, 100)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ebl4s"]
 atlas = ExtResource("1_112k3")
@@ -31,8 +49,57 @@ region = Rect2(400, 0, 100, 100)
 atlas = ExtResource("1_112k3")
 region = Rect2(500, 0, 100, 100)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_wdtbw"]
+atlas = ExtResource("4_vmmvy")
+region = Rect2(0, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmkco"]
+atlas = ExtResource("4_vmmvy")
+region = Rect2(100, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l8pp7"]
+atlas = ExtResource("4_vmmvy")
+region = Rect2(200, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cfn6u"]
+atlas = ExtResource("4_vmmvy")
+region = Rect2(300, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5sehi"]
+atlas = ExtResource("4_vmmvy")
+region = Rect2(400, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1jcq4"]
+atlas = ExtResource("4_vmmvy")
+region = Rect2(500, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_en85v"]
+atlas = ExtResource("4_vmmvy")
+region = Rect2(600, 0, 100, 100)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dhe0"]
+atlas = ExtResource("4_vmmvy")
+region = Rect2(700, 0, 100, 100)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_76a77"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vtomc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pqgq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jdfp3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vfcqq")
+}],
+"loop": true,
+"name": &"death",
+"speed": 4.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ebl4s")
@@ -55,10 +122,43 @@ animations = [{
 "loop": true,
 "name": &"default",
 "speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wdtbw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vmkco")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l8pp7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cfn6u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5sehi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1jcq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_en85v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dhe0")
+}],
+"loop": true,
+"name": &"running",
+"speed": 9.0
 }]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+collision_layer = 2147483649
 script = ExtResource("1_b4lf5")
+metadata/isPlayer = true
+metadata/maxHealth = 100.0
+metadata/currentHealth = 100.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -8)
@@ -68,4 +168,4 @@ shape = SubResource("CapsuleShape2D_h22q7")
 position = Vector2(0, -7)
 sprite_frames = SubResource("SpriteFrames_76a77")
 autoplay = "default"
-frame_progress = 0.714418
+frame_progress = 0.943361

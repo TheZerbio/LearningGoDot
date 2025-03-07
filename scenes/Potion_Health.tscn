@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dq7g7x4wj0kku"]
+
+[ext_resource type="Script" path="res://scripts/potion_health.gd" id="1_4jtma"]
+[ext_resource type="PackedScene" uid="uid://dhtc81w2qxs1e" path="res://scenes/Collectible.tscn" id="1_i4wqy"]
+[ext_resource type="Texture2D" uid="uid://bb84wcrq0u1ie" path="res://assets/Tiny Swords (Update 010)/Deco/13.png" id="2_y6k8p"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_paqm3"]
+radius = 286.923
+
+[node name="PotionHealth" type="Node2D"]
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_4jtma")
+
+[node name="Collectible" parent="." instance=ExtResource("1_i4wqy")]
+
+[node name="Sprite2D" parent="Collectible" index="0"]
+texture = ExtResource("2_y6k8p")
+
+[node name="CollisionShape2D" parent="Collectible/Area2D" index="0"]
+shape = SubResource("CircleShape2D_paqm3")
+
+[connection signal="collected" from="Collectible" to="." method="_on_collectible_collected"]
+
+[editable path="Collectible"]
