@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://ci3wkadq6a3dt"]
+
+[ext_resource type="Script" uid="uid://fssvp3q64rp4" path="res://scenes/collision_shape_2d.gd" id="1_axdvg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_motb6"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_wwpbi"]
+
+[node name="Platform" type="StaticBody2D"]
+metadata/one_way = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_motb6")
+script = ExtResource("1_axdvg")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(20, 20)
+texture = SubResource("CanvasTexture_wwpbi")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dq7g7x4wj0kku"]
 
-[ext_resource type="Script" path="res://scripts/potion_health.gd" id="1_4jtma"]
+[ext_resource type="Script" uid="uid://bubjt7od1fhoc" path="res://scripts/potion_health.gd" id="1_4jtma"]
 [ext_resource type="PackedScene" uid="uid://dhtc81w2qxs1e" path="res://scenes/Collectible.tscn" id="1_i4wqy"]
 [ext_resource type="Texture2D" uid="uid://bb84wcrq0u1ie" path="res://assets/Tiny Swords (Update 010)/Deco/13.png" id="2_y6k8p"]
 
